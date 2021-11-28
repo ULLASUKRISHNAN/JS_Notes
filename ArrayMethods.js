@@ -138,3 +138,124 @@ for (const key of iterator) {
  *========================**/
 // lastIndexOf(searchElement, fromIndex)
 console.log('The last index of 2 in arr is ' + arr.lastIndexOf('2'));
+
+/**======================
+ *    map()
+ *========================**/
+
+const map1 = arr.map((x) => x * 2);
+console.log(map1);
+//! WHEN NOT TO USE MAP()
+
+// you're not using the array it returns;
+// you're not returning a value from the callback
+// use forEach or for...of instead.
+
+/**======================
+ *     Array.of() vs Array constructor
+ *========================**/
+console.log(Array.of(2)); // [2]
+console.log(Array(2)); //2 empty items
+
+/**======================
+ *    pop()
+ *========================**/
+
+console.log(list.pop());
+// This will modify the original array
+// undefined if the array is empty.
+
+/**======================
+ *    push()
+ *========================**/
+
+const count = list.push('apple');
+console.log(count);
+//  returns the new length of the array.
+
+/**======================
+ *    reduce()
+ *========================**/
+//reduce(callbackFn, initialValue)
+let total = [0, 1, 2, 3].reduce(
+  (previousValue, currentValue) => previousValue + currentValue,
+  0
+);
+
+/**======================
+ *    reverse()
+ *========================**/
+
+console.log('reversed:', arr.reverse());
+
+/**======================
+ *    shift()
+ *========================**/
+
+console.log(arr.shift());
+// return the removed value and the original array is modfied
+
+/**======================
+ *    slice()
+ *========================**/
+
+console.log(list.slice(1));
+// slice(start, end);
+
+/**======================
+ *    some()
+ *========================**/
+
+console.log(arr.some((val) => val > 2));
+//some(callbackFn)
+
+/**======================
+ *    sort()
+ *========================**/
+
+// sort((firstEl, secondEl) => { ... } )
+
+console.log(arr.sort((a, b) => b - a));
+
+/**======================
+ *    splice()
+ *========================**/
+// used to y remove or replace existing elements in array
+//splice(start, deleteCount, item1, item2, itemN)
+
+const months = ['Jan', 'March', 'April', 'June'];
+months.splice(1, 0, 'Feb');
+console.log(months);
+
+/**======================
+ *    toLocaleString()
+ *========================**/
+
+console.log(arr.toLocaleString());
+//string representing the elements of the array.
+// this takes some locale as arguments
+
+/**======================
+ **      toString()
+ *========================**/
+console.log(arr.toString());
+
+/**======================
+ *    unshift()
+ *========================**/
+
+console.log(arr.unshift());
+//The elements to add to the front of the arr.
+
+/**======================
+ *    values()
+ *========================**/
+
+console.log(arr.values());
+//returns array iterator object
+
+arr = ['a', 'b', 'c', 'd', 'e'];
+let values = arr.values();
+for (let letter of values) {
+  console.log(letter);
+}
