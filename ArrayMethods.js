@@ -259,3 +259,53 @@ let values = arr.values();
 for (let letter of values) {
   console.log(letter);
 }
+
+/**======================
+ *    apply()
+ *========================**/
+//apply(thisArg, argsArray)
+
+const numbers = [5, 6, 2, 3, 7];
+
+const max = Math.max.apply(null, numbers);
+
+//the fundamental difference is that call() accepts an argument list, while apply() accepts a single array of arguments.
+
+/**======================
+ *    bind()
+ *========================**/
+
+// bind(thisArg, arg1, ... , argN)
+
+const module = {
+  x: 42,
+  getX: function () {
+    return this.x;
+  },
+};
+
+const unboundGetX = module.getX;
+console.log(unboundGetX()); // The function gets invoked at the global scope
+// expected output: undefined
+
+const boundGetX = unboundGetX.bind(module);
+console.log(boundGetX());
+// expected output: 42
+
+/**======================
+ *    call()
+ *========================**/
+//The result of calling the function with the specified this value and arguments.
+
+function Product(name, price) {
+  this.name = name;
+  this.price = price;
+}
+
+function Food(name, price) {
+  Product.call(this, name, price);
+  this.category = 'food';
+}
+
+console.log(new Food('cheese', 5).name);
+// expected output: "cheese"
