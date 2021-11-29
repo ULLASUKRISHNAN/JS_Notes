@@ -1,0 +1,6 @@
+According to MDN documentation:
+
+getElementsByClassName() returns a live HTMLCollection representing an array-like object of all child elements which have all of the given class name(s).
+querySelectorAll() returns a static (not live) NodeList representing a list of the document's elements that match the specified group of selectors.
+
+HTMLCollection is a live data structure and NodeList is a static data structure. At first hand the HTMLCollection updates itself automatically every time it detects a change in the items that were retrieved by the method. On the other hand, NodeList will remain the same since the moment we executed it no matter the changes that occur in our HTML.
